@@ -18,3 +18,11 @@
 ### Galery:
 
 ![image](https://user-images.githubusercontent.com/70013669/193876443-50f612ab-5627-404d-8cf9-f965e0586d40.png)
+
+
+
+<!-- Log- 4/10/22:
+The menu has the play button functional
+The intro level is working
+further design of the first 3 levels is necesary after script is written
+next up is the design of the main character -->
