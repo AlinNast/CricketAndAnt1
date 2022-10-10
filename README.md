@@ -32,4 +32,8 @@
 The menu has the play button functional
 The intro level is working
 further design of the first 3 levels is necesary after script is written
-next up is the design of the main character -->
+next up is the design of the main character
+
+    Log 10/10/2022:
+The main players was created, with animation, collisions and logic, 
+to be replaces later with a cricket sprite-->
