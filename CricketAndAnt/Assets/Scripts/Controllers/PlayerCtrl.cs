@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+//using UnityEngine.Physics2DModule;
 using System.Collections;
 
 /// <summary>
@@ -7,164 +8,159 @@ using System.Collections;
 /// </summary>
 public class PlayerCtrl : MonoBehaviour 
 {
-	#region: PUBLIC VARIABLES
-	public float moveSpeed;
-	public float jumpForceY;
-	public Transform groundCheck;
-	public float doubleJumpDelay;
-	#endregion
+	[Tooltip("This is a positive int which affects the movement speed of the player")]
+	public int speedBoost;
 
-	#region: PRIVATE VARIABLES
-	Rigidbody2D rb;
-	Animator anim;
-	SpriteRenderer sr;
-	bool canDoubleJump;
-	bool facingRight;
+	[Tooltip("This is a positive int wich affects the movement speed of the jump")]
+	public int jumpSpeed;
 
-	[SerializeField]
+	public Transform feet;
+
+	public float feetRadius;
+	public GameObject leftBullet, rightBullet;
+
+	public Transform leftBulletSpownPos;
+	public Transform rightBulletSpownPos;
+
+	public LayerMask whatIsGround;
+
+	public float boxWidth;
+	public float boxHeight;
+
 	bool isGrounded;
-	#endregion
 
-	#region: MONOBEHAVIOR METHODS
-	// Use this for initialization
+	bool isJumping;
 
-	void Start () 
-	{
-		rb = GetComponent<Rigidbody2D>();
-		anim = GetComponent<Animator>();
-		sr = GetComponent<SpriteRenderer>();
+	Rigidbody2D rigidBody;
 
-		if(sr.flipX)
-			facingRight = true;
-		else
-			facingRight = false;
-	}
+	SpriteRenderer spriteRenderer;
 
-	void Update () 
-	{
-		isGrounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
+	/// <summary>
+	/// State: 0-idle, 1-run, 2-jump, 3-fall, -1-hurt
+	/// </summary>
+	Animator animator;
 
-		if(isGrounded && rb.velocity.x == 0)
-			anim.SetInteger("State",0);
+	void Start()
+    {
+		rigidBody = GetComponent<Rigidbody2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
+		animator = GetComponent<Animator>();
+    }
 
-		// MOVE LEFT
-		if(Input.GetKey(KeyCode.LeftArrow))
-		{
-			MoveLeft();
-		}
-		if(Input.GetKeyUp(KeyCode.LeftArrow))
-		{
-			StopMoving();
-		}
+	/// <summary>
+    /// This method is called every frame of the game
+    /// </summary>
+	void Update()
+    {
+		isGrounded = Physics2D.OverlapBox(new Vector2(feet.position.x, feet.position.y), new Vector2(boxWidth, boxHeight), 360.0f, whatIsGround);
 
-		// MOVE RIGHT
-		if(Input.GetKey(KeyCode.RightArrow))
-		{
-			MoveRight();
-		}
-		if(Input.GetKeyUp(KeyCode.RightArrow))
-		{
-			StopMoving();
-		}
-			
-		// JUMP
-		if(Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+		float playerSpeed = Input.GetAxisRaw("Horizontal"); // value will be -1, 1 or 0
+		playerSpeed *= speedBoost;
+
+		if(playerSpeed != 0)
+        {
+			MoveHorizontal(playerSpeed);
+        }
+        else
+        {
+			StopMove();
+        }
+
+		if (Input.GetButtonDown("Jump"))
 		{
 			Jump();
 		}
-		if(Input.GetKeyDown(KeyCode.UpArrow) && canDoubleJump)
+
+		if (Input.GetButtonDown("Fire1"))
 		{
-			Jump();
+			FireBullets();
 		}
-			
-		HandleJumpAndFall();
-	}
 
-	void OnDrawGizmos()
-	{
-		Gizmos.DrawWireSphere(groundCheck.transform.position,0.02f);
-	}
-	#endregion
+		Fall();
+    }
 
-	#region: PRIVATE METHODS
-	void ActivateDoubleJump()
-	{
-		canDoubleJump = true;
-	}
+	/// <summary>
+	/// Moves the player on the x axis
+	/// </summary>
+	/// <param name="playerSpeed"></param>
+	void MoveHorizontal(float playerSpeed)
+    {
+		rigidBody.velocity = new Vector2(playerSpeed, rigidBody.velocity.y);
 
-	void MoveLeft()
-	{	
-		rb.velocity = new Vector2(-moveSpeed,rb.velocity.y);
-		anim.SetInteger("State",1);
-		sr.flipX = true;
-	}
-		
-	void MoveRight()
-	{
-		rb.velocity = new Vector2(moveSpeed,rb.velocity.y);
-		anim.SetInteger("State",1);
-		sr.flipX = false;
-	}
-		
-	void StopMoving()
-	{
-		rb.velocity = Vector2.zero;
-		anim.SetInteger("State",0);
-	}
-		
+		if(playerSpeed < 0)
+		{
+			spriteRenderer.flipX = true;
+		}
+		else if(playerSpeed > 0)
+		{
+			spriteRenderer.flipX=false;
+		}
+
+		if (!isJumping)
+		{
+            animator.SetInteger("State", 1);
+        }
+
+
+    }
+
+
+	void StopMove()
+    {
+		rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
+        if (!isJumping)
+		{
+            animator.SetInteger("State", 0);
+        }
+    }
+	
+	/// <summary>
+	/// Makes the player jump on the y axis
+	/// </summary>
 	void Jump()
 	{
-		if(isGrounded)
+		if (isGrounded)
 		{
-			rb.AddForce(new Vector2(0, jumpForceY));
-			isGrounded = false;
-			anim.SetInteger("State",2);
-			Invoke("EnableDoubleJump", doubleJumpDelay);
-		}
+            
+            rigidBody.AddForce(new Vector2(rigidBody.velocity.x, jumpSpeed));
+            isJumping = true;
+            animator.SetInteger("State", 2);
+        }
+    }
 
-		if(canDoubleJump)
-		{
-			rb.velocity = Vector3.zero;
-			rb.AddForce(new Vector2(0, jumpForceY));
-			anim.SetInteger("State",2);
-			canDoubleJump = false;
-		}
-	}
-
-	void EnableDoubleJump()
+	void Fall()
 	{
-		canDoubleJump = true;
-	}
-		
-	void HandleJumpAndFall()
-	{
-		if(!isGrounded)
+		if (!isGrounded && rigidBody.velocity.y < 0)
 		{
-			if(rb.velocity.y > 0)
-			{
-				anim.SetInteger("State",2);
-			}
-			if(rb.velocity.y < 0)
-			{
-				anim.SetInteger("State",3);
-			}
+            animator.SetInteger("State", 3);
+        }
+    }
+
+	void FireBullets()
+	{
+		if (spriteRenderer.flipX)
+			Instantiate(leftBullet, leftBulletSpownPos.position, Quaternion.identity);
+        if (!spriteRenderer.flipX)
+            Instantiate(rightBullet, rightBulletSpownPos.position, Quaternion.identity);
+    }
+
+	/// <summary>
+	/// Sets isJumping to false on collision with ground objects
+	/// </summary>
+	/// <param name="collision"></param>
+	void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.CompareTag("Ground"))
+		{
+			isJumping= false;
 		}
 	}
-	#endregion
 
-	#region: COLLISIONS
-	void OnCollisionEnter2D(Collision2D other)
+	/// <summary>
+	/// This draws a sphere on the feet componentf for visual debuging
+	/// </summary>
+	private void OnDrawGizmos()
 	{
-		switch (other.gameObject.tag) 
-		{
-		case "Ground":
-			canDoubleJump = false;
-			break;
-		default:
-			break;
-		}
+		Gizmos.DrawWireCube(feet.position, new Vector3(boxWidth, boxHeight, 0));
 	}
-	#endregion
-
-
 }
