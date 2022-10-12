@@ -17,6 +17,7 @@
  - How to control a character with scripts
  - How to add Animations
  - How to use the Animator
+ - About UnasignedRefferenceError (a very commun mistake)
  
  
 ### Galery:
