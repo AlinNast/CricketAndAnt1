@@ -17,7 +17,7 @@ TagManager:
   - Collectable
   - Enemies
   - Players
-  - 
+  - Interactions
   - 
   - 
   - 
@@ -49,4 +49,7 @@ TagManager:
     locked: 0
   - name: ForeGround
     uniqueID: 732605405
+    locked: 0
+  - name: UI
+    uniqueID: 884036251
     locked: 0

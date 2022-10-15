@@ -14,23 +14,39 @@ public class PlayerCtrl : MonoBehaviour
 	[Tooltip("This is a positive int wich affects the movement speed of the jump")]
 	public int jumpSpeed;
 
+	[Tooltip("This a a slot for feet component")]
 	public Transform feet;
 
+	[Tooltip("positive int to expand feet collision area")]
 	public float feetRadius;
-	public GameObject leftBullet, rightBullet;
 
-	public Transform leftBulletSpownPos;
+    [Tooltip("Bullet object slot")]
+    public GameObject leftBullet, rightBullet;
+
+    [Tooltip("bullet spawn location slot")]
+    public Transform leftBulletSpownPos;
 	public Transform rightBulletSpownPos;
 
-	public LayerMask whatIsGround;
+    [Tooltip("i forgot what this is")]
+    public LayerMask whatIsGround;
 
-	public float boxWidth;
+    [Tooltip("i forgot what this is")]
+    public float boxWidth;
 	public float boxHeight;
 
+	// is true if collision with ground taged tiles and feet component of player
 	bool isGrounded;
 
+	// used to check for double jumps
 	bool isJumping;
 
+	// for mobile controlls
+	bool leftPressed;
+	bool rightPressed;
+	bool jumpPressed;
+	bool shootPressed;
+
+	
 	Rigidbody2D rigidBody;
 
 	SpriteRenderer spriteRenderer;
@@ -52,11 +68,14 @@ public class PlayerCtrl : MonoBehaviour
     /// </summary>
 	void Update()
     {
+		// ground colliesion
 		isGrounded = Physics2D.OverlapBox(new Vector2(feet.position.x, feet.position.y), new Vector2(boxWidth, boxHeight), 360.0f, whatIsGround);
 
+		// player speed
 		float playerSpeed = Input.GetAxisRaw("Horizontal"); // value will be -1, 1 or 0
 		playerSpeed *= speedBoost;
 
+		// key controlls
 		if(playerSpeed != 0)
         {
 			MoveHorizontal(playerSpeed);
@@ -77,8 +96,29 @@ public class PlayerCtrl : MonoBehaviour
 		}
 
 		Fall();
+
+		// button controlls
+		if (leftPressed)
+		{
+			MoveHorizontal(-speedBoost);
+		}
+        if (rightPressed)
+        {
+            MoveHorizontal(speedBoost);
+        }
+		if (jumpPressed)
+		{
+			jumpPressed = false;
+			Jump();
+		}
+		if (shootPressed)
+		{
+            shootPressed = false;
+            FireBullets();
+        }
     }
 
+	// player actual controlls
 	/// <summary>
 	/// Moves the player on the x axis
 	/// </summary>
@@ -104,7 +144,9 @@ public class PlayerCtrl : MonoBehaviour
 
     }
 
-
+	/// <summary>
+	/// makes the player stop
+	/// </summary>
 	void StopMove()
     {
 		rigidBody.velocity = new Vector2(0, rigidBody.velocity.y);
@@ -128,6 +170,9 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// checks if player is falling and show propper animation
+	/// </summary>
 	void Fall()
 	{
 		if (!isGrounded && rigidBody.velocity.y < 0)
@@ -136,6 +181,9 @@ public class PlayerCtrl : MonoBehaviour
         }
     }
 
+	/// <summary>
+	/// Makes the player shoot
+	/// </summary>
 	void FireBullets()
 	{
 		if (spriteRenderer.flipX)
@@ -143,6 +191,34 @@ public class PlayerCtrl : MonoBehaviour
         if (!spriteRenderer.flipX)
             Instantiate(rightBullet, rightBulletSpownPos.position, Quaternion.identity);
     }
+
+
+	// Mobile controlls
+	public void MobileMoveLeft()
+	{
+		leftPressed = true;
+	}
+	public void MobileMoveRight() 
+	{ 
+		rightPressed = true;
+	}
+
+	public void MobileStop()
+	{
+		leftPressed = false;
+		rightPressed = false;
+	}
+
+	public void MobileJump()
+	{
+		jumpPressed = true;
+	}
+
+	public void MobileShoot()
+	{
+		shootPressed = true;
+	}
+
 
 	/// <summary>
 	/// Sets isJumping to false on collision with ground objects

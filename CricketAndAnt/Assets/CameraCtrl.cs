@@ -20,7 +20,10 @@ public class CameraCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //follows player
         transform.position = new Vector3(player.position.x, player.position.y + 3, transform.position.z);
+
+        // background follow camera
         background.position = new Vector3(transform.position.x, transform.position.y, background.position.z);
     }
 }
