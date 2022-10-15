@@ -18,6 +18,7 @@
  - How to add Animations
  - How to use the Animator
  - About UnasignedRefferenceError (a very commun mistake)
+ - How to trigger events on collisions
  
  
 ### Galery:
@@ -37,4 +38,9 @@ next up is the design of the main character
 
     Log 10/10/2022:
 The main players was created, with animation, collisions and logic, 
-to be replaces later with a cricket sprite-->
+to be replaces later with a cricket sprite
+
+    Log 16/10/22:
+Mobile controllers added, now i should design at least the main character to 
+start to have an ideea about animations and 2D design meanwhile,
+i should finish the intro level design-->
