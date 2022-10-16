@@ -19,6 +19,7 @@
  - How to use the Animator
  - About UnasignedRefferenceError (a very commun mistake)
  - How to trigger events on collisions
+ - How to do 2D animations with Gimp
  
  
 ### Galery:
