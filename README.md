@@ -45,4 +45,10 @@ to be replaces later with a cricket sprite
     Log 16/10/22:
 Mobile controllers added, now i should design at least the main character to 
 start to have an ideea about animations and 2D design meanwhile,
-i should finish the intro level design-->
+i should finish the intro level design
+
+    Log 16/10/22:
+I tiped my toes in gimp and did some 2D animation, i can imagine doing it 
+better but for the first idle animation of the Cricket its ok.
+Now that i got ahang of i have to do the other 6 animations of the cricket
+meanwhile i should finish the intro level design-->
