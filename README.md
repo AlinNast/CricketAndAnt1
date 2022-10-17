@@ -54,4 +54,9 @@ i should finish the intro level design
 I tiped my toes in gimp and did some 2D animation, i can imagine doing it 
 better but for the first idle animation of the Cricket its ok.
 Now that i got ahang of i have to do the other 6 animations of the cricket
-meanwhile i should finish the intro level design-->
+meanwhile i should finish the intro level design
+
+    Log 17/10/22:
+Finished trhe cricke taniamtions, not good not terible, i should try a
+different aproach for the next sprite
+i should finish lvl design on intro to lounch demo-->
