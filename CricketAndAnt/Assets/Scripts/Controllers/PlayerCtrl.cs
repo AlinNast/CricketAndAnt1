@@ -129,11 +129,11 @@ public class PlayerCtrl : MonoBehaviour
 
 		if(playerSpeed < 0)
 		{
-			spriteRenderer.flipX = true;
+			spriteRenderer.flipX = false;
 		}
 		else if(playerSpeed > 0)
 		{
-			spriteRenderer.flipX=false;
+			spriteRenderer.flipX=true;
 		}
 
 		if (!isJumping)
