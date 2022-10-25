@@ -20,8 +20,13 @@
  - About UnasignedRefferenceError (a very commun mistake)
  - How to trigger events on collisions
  - How to do 2D animations with Gimp
+ - What is a singleton and how to use it
  
- 
+### Challanges:
+ - Writing the script for the story
+ - Keeping motivation to continue the project while other ideas come ti mind
+
+
 ### Galery:
 
 ![image](https://user-images.githubusercontent.com/70013669/193876443-50f612ab-5627-404d-8cf9-f965e0586d40.png)
