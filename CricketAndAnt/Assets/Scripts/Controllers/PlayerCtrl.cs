@@ -73,10 +73,17 @@ public class PlayerCtrl : MonoBehaviour
 
 		// player speed
 		float playerSpeed = Input.GetAxisRaw("Horizontal"); // value will be -1, 1 or 0
-		playerSpeed *= speedBoost;
+		if (isJumping)
+		{
+			playerSpeed *= speedBoost * 2;
+		}
+		else
+		{
+            playerSpeed *= speedBoost;
+        }
 
-		// key controlls
-		if(playerSpeed != 0)
+        // key controlls
+        if (playerSpeed != 0)
         {
 			MoveHorizontal(playerSpeed);
         }
@@ -229,6 +236,18 @@ public class PlayerCtrl : MonoBehaviour
 		if (collision.gameObject.CompareTag("Ground"))
 		{
 			isJumping= false;
+		}
+	}
+
+	private void OnTriggerEnter2D(Collider2D collider)
+	{
+		switch (collider.gameObject.tag)
+		{
+			case "Coin":
+				SFXCtrl.Instance.ShowCoinSparkle(collider.gameObject.transform.position);
+				break;
+			default:
+				break;
 		}
 	}
 
