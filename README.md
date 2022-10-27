@@ -64,4 +64,7 @@ meanwhile i should finish the intro level design
     Log 17/10/22:
 Finished trhe cricke taniamtions, not good not terible, i should try a
 different aproach for the next sprite
-i should finish lvl design on intro to lounch demo-->
+i should finish lvl design on intro to lounch demo
+
+    Log 27/10/22:
+Added sfx controller-->
