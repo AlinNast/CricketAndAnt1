@@ -1,16 +1,16 @@
+﻿using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 /// <summary>
-/// Destroys game object with delay
+/// Destroys host gameobject with specified delay eg. bullets
 /// </summary>
 public class DestroyWithDelay : MonoBehaviour
 {
-    public float delay;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Destroy(gameObject,delay);
-    }
+	public float delay;		// how long to wait before destroying gameobject
+
+	void Start () 
+	{
+		Destroy(gameObject, delay);
+	}
+
 }

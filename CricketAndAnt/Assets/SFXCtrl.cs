@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class SFXCtrl : MonoBehaviour
 {
-    public GameObject sfxCoinPickup;
+    public SFX sfx;
 
     public static SFXCtrl Instance { get; private set; } // singleton
 
@@ -25,6 +25,16 @@ public class SFXCtrl : MonoBehaviour
     /// </summary>
     public void ShowCoinSparkle(Vector3 position)
     {
-        Instantiate(sfxCoinPickup, position, Quaternion.identity);
+        Instantiate(sfx.sfx_coin_pickup, position, Quaternion.identity);
+    }
+
+    public void ShowViolinSparckle(Vector3 position)
+    {
+        Instantiate(sfx.sfx_violin_pickup, position, Quaternion.identity);
+    }
+
+    public void ShowLandingPoof(Vector3 position)
+    {
+        Instantiate(sfx.sfx_player_lands, position, Quaternion.identity);
     }
 }

@@ -34,6 +34,10 @@ public class PlayerCtrl : MonoBehaviour
     public float boxWidth;
 	public float boxHeight;
 
+	public bool SFXon;
+
+	public bool canFire;
+
 	// is true if collision with ground taged tiles and feet component of player
 	bool isGrounded;
 
@@ -193,10 +197,14 @@ public class PlayerCtrl : MonoBehaviour
 	/// </summary>
 	void FireBullets()
 	{
-		if (spriteRenderer.flipX)
-			Instantiate(leftBullet, leftBulletSpownPos.position, Quaternion.identity);
-        if (!spriteRenderer.flipX)
-            Instantiate(rightBullet, rightBulletSpownPos.position, Quaternion.identity);
+		if (canFire)
+		{
+            if (!spriteRenderer.flipX)
+                Instantiate(leftBullet, leftBulletSpownPos.position, Quaternion.identity);
+            if (spriteRenderer.flipX)
+                Instantiate(rightBullet, rightBulletSpownPos.position, Quaternion.identity);
+        }
+	
     }
 
 
@@ -244,8 +252,17 @@ public class PlayerCtrl : MonoBehaviour
 		switch (collider.gameObject.tag)
 		{
 			case "Coin":
-				SFXCtrl.Instance.ShowCoinSparkle(collider.gameObject.transform.position);
+				if (SFXon)
+					SFXCtrl.Instance.ShowCoinSparkle(collider.gameObject.transform.position);
 				break;
+			case "Violin":
+				canFire = true;
+				Vector3 violinPos = collider.gameObject.transform.position;
+				Destroy(collider.gameObject);
+                if (SFXon)
+                    SFXCtrl.Instance.ShowViolinSparckle(violinPos);
+				break;
+			
 			default:
 				break;
 		}

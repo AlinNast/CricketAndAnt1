@@ -8,6 +8,8 @@ TagManager:
   - Items
   - Obstacles
   - Coin
+  - Violin
+  - Bullet
   layers:
   - Default
   - TransparentFX
