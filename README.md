@@ -24,7 +24,7 @@
  
 ### Challanges:
  - Writing the script for the story
- - Keeping motivation to continue the project while other ideas come ti mind
+ - Keeping motivation to continue the project while other ideas come to my mind
 
 
 ### Galery:
