@@ -21,10 +21,13 @@
  - How to trigger events on collisions
  - How to do 2D animations with Gimp
  - What is a singleton and how to use it
+ - How to implement a GarbageCollector
+ - How to implement a GameController
  
 ### Challanges:
  - Writing the script for the story
  - Keeping motivation to continue the project while other ideas come to my mind
+ - Having a summary for every major class or method
 
 
 ### Galery:
@@ -67,4 +70,11 @@ different aproach for the next sprite
 i should finish lvl design on intro to lounch demo
 
     Log 27/10/22:
-Added sfx controller-->
+Added sfx controller
+
+    Log 1/11/22:
+Added some mooving and falling platforms, also breakable crates, theese will 
+be usefull to make the game fun, I belive its realistic to have a demo lvl by
+december to show to friends, some script ideas come to mind but i should write it down.
+I figured i should at least finish the tutorial to the adds section before completing lvls
+having a demo by then its realistical -->
