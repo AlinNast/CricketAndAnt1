@@ -25,7 +25,14 @@ public class CameraCtrl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(player.transform.position.x + Xoffset, player.transform.position.y + Yoffset, -10);
-        backGround.position = new Vector3(player.transform.position.x + Xoffset, player.transform.position.y + Yoffset, 0);
+        float maxFall = -10;
+        if (player.transform.position.y < maxFall)
+        {
+            transform.position = new Vector3(player.transform.position.x + Xoffset, -10, -10);
+        }
+        else
+        {
+            transform.position = new Vector3(player.transform.position.x + Xoffset, player.transform.position.y + Yoffset, -10);
+        }
     }
 }

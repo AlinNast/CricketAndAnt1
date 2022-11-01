@@ -42,7 +42,7 @@ public class PlayerCtrl : MonoBehaviour
 	bool isGrounded;
 
 	// used to check for double jumps
-	bool isJumping;
+	public bool isJumping;
 
 	// for mobile controlls
 	bool leftPressed;
@@ -241,10 +241,7 @@ public class PlayerCtrl : MonoBehaviour
 	/// <param name="collision"></param>
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		if (collision.gameObject.CompareTag("Ground"))
-		{
-			isJumping= false;
-		}
+		
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)
@@ -261,8 +258,15 @@ public class PlayerCtrl : MonoBehaviour
 				Destroy(collider.gameObject);
                 if (SFXon)
                     SFXCtrl.Instance.ShowViolinSparckle(violinPos);
+				
 				break;
-			
+			case "Water":
+				if (SFXon)
+				{
+					SFXCtrl.Instance.ShowWaterSplash(collider.gameObject.transform.position);
+				}
+                GameCtrl.instance.PlayerDrowned(transform.gameObject);
+                break;
 			default:
 				break;
 		}

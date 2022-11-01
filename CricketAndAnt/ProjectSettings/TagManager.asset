@@ -10,6 +10,11 @@ TagManager:
   - Coin
   - Violin
   - Bullet
+  - Breakable
+  - PlayerHead
+  - Water
+  - PlayerFeet
+  - Platform
   layers:
   - Default
   - TransparentFX
@@ -21,7 +26,7 @@ TagManager:
   - Enemies
   - Players
   - Interactions
-  - 
+  - Fragments
   - 
   - 
   - 

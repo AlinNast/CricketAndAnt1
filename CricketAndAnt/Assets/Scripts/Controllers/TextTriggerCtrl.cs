@@ -25,7 +25,7 @@ public class TextTriggerCtrl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("its a match");
+        
         textBaner.transform.position = new Vector3(textBaner.transform.position.x, textBaner.transform.position.y, 1);
         textMessege.transform.position = new Vector3(textMessege.transform.position.x, textMessege.transform.position.y, 0);
 
