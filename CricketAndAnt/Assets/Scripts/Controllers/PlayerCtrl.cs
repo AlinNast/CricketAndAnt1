@@ -23,6 +23,8 @@ public class PlayerCtrl : MonoBehaviour
     [Tooltip("Bullet object slot")]
     public GameObject leftBullet, rightBullet;
 
+	public GameObject GarbageCollector;
+
     [Tooltip("bullet spawn location slot")]
     public Transform leftBulletSpownPos;
 	public Transform rightBulletSpownPos;
@@ -34,6 +36,7 @@ public class PlayerCtrl : MonoBehaviour
     public float boxWidth;
 	public float boxHeight;
 
+
 	public bool SFXon;
 
 	public bool canFire;
@@ -44,9 +47,10 @@ public class PlayerCtrl : MonoBehaviour
 	// used to check for double jumps
 	public bool isJumping;
 
+	public bool isStuck;
 	// for mobile controlls
-	bool leftPressed;
-	bool rightPressed;
+	public bool leftPressed;
+	public bool rightPressed;
 	bool jumpPressed;
 	bool shootPressed;
 
@@ -251,6 +255,7 @@ public class PlayerCtrl : MonoBehaviour
 			case "Coin":
 				if (SFXon)
 					SFXCtrl.Instance.ShowCoinSparkle(collider.gameObject.transform.position);
+				GameCtrl.instance.UpdateCoinCount();
 				break;
 			case "Violin":
 				canFire = true;
@@ -261,6 +266,7 @@ public class PlayerCtrl : MonoBehaviour
 				
 				break;
 			case "Water":
+				GarbageCollector.SetActive(false);
 				if (SFXon)
 				{
 					SFXCtrl.Instance.ShowWaterSplash(collider.gameObject.transform.position);

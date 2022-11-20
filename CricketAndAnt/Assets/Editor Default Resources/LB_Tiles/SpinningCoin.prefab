@@ -115,7 +115,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f90085b3da47e9742855875be4222092, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinFx: 0
+  coinFx: 1
+  speed: 0.01
+  isFlying: 0
 --- !u!95 &3960641240579147652
 Animator:
   serializedVersion: 4
