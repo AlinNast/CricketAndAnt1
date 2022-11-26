@@ -245,7 +245,10 @@ public class PlayerCtrl : MonoBehaviour
 	/// <param name="collision"></param>
 	void OnCollisionEnter2D(Collision2D collision)
 	{
-		
+		if (collision.gameObject.CompareTag("Enemy"))
+		{
+			GameCtrl.instance.PlayerDiedAnimation(gameObject);
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collider)

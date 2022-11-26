@@ -16,6 +16,8 @@ TagManager:
   - PlayerFeet
   - Platform
   - PlayerStuck
+  - Enemy
+  - EnemyHead
   layers:
   - Default
   - TransparentFX

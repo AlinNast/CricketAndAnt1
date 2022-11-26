@@ -63,7 +63,39 @@ public class GameCtrl : MonoBehaviour
         //Invoke("RestartLevel", restartDelay);
     }
 
-    
+    public void PlayerDiedAnimation(GameObject player)
+    {
+        Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        rb.AddForce(new Vector2(-100f, 100f));
+
+        player.transform.Rotate(new Vector3(0, 0, 30f));
+
+        player.GetComponent<PlayerCtrl>().enabled = false;
+
+        foreach(Collider2D collider2D in player.GetComponents<Collider2D>())
+        {
+            collider2D.enabled = false;
+        }
+
+        foreach(Transform child in player.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+
+        Camera.main.GetComponent<CameraCtrl>().enabled = false ;
+
+        rb.velocity = Vector2.zero;
+
+        StartCoroutine("PauseBeforeReload", player);
+    }
+
+    IEnumerator PauseBeforeReload(GameObject player)
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        PlayerDied(player);
+    }
+
 
     public void PlayerDrowned(GameObject player)
     {
@@ -88,6 +120,12 @@ public class GameCtrl : MonoBehaviour
         data.score += value;
 
         ui.txtScore.text = " Score: " + data.score;
+    }
+
+    public void BulletHitEnemy(Transform enemy)
+    {
+        Destroy(enemy.gameObject);
+        UpdateScoreCount(49);
     }
 
     public void UpdateKeyCount(int KeyNum)
