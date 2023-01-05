@@ -23,13 +23,17 @@
  - What is a singleton and how to use it
  - How to implement a GarbageCollector
  - How to implement a GameController
- - How to add different game mechanics to gameO objects
+ - How to add different game mechanics to game objects
+ - Implementing soundFX in different ways
+ - Building a early demo to ask for feedback is important
  
 ### Challanges:
  - Writing the script for the story
  - Keeping motivation to continue the project while other ideas come to my mind
  - Having a summary for every major class or method
  - Learning the principles to write clean code with so many scripts
+ - Working on the game with another day job
+ - Having Build errors on the first build of the demo
 
 
 ### Galery:
@@ -84,4 +88,9 @@ having a demo by then its realistical
    Log 19/11/22:
 I just moved to Sinaia mountains, winter is comming, and soon ill finish my room, then i hope
 I can work a lot more, now, i just finished implementing all the game mechanics and i believe i can
-start to build the demo after im done with enemies and sound FX-->
+start to build the demo after im done with enemies and sound FX
+
+    Log 5/1/23:
+I returned from Sinaia, while i was there i managed to work on the demo of the game (not on this repo),
+version is still not ready (waiting for some sound fx and a few more features).
+Now the tutorial is still 75%, today i implemented the AudioCRTL -->

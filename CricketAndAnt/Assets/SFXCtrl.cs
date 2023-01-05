@@ -58,6 +58,8 @@ public class SFXCtrl : MonoBehaviour
         Instantiate(sfx.sfx_fragment2, pos2, Quaternion.identity);
         Instantiate(sfx.sfx_fragment3, pos3, Quaternion.identity);
         Instantiate(sfx.sfx_fragment4, pos4, Quaternion.identity);
+
+        AudioCtrl.Instance.BreakCrate(pos1);
     }
 
     public void ShowWaterSplash(Vector3 position)
