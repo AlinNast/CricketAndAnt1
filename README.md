@@ -26,6 +26,9 @@
  - How to add different game mechanics to game objects
  - Implementing soundFX in different ways
  - Building a early demo to ask for feedback is important
+ - Making a separete prototype for experiments can be useful
+ - How to implement a SoundFX controller
+ - How to design a beter camera play
  
 ### Challanges:
  - Writing the script for the story
@@ -34,6 +37,7 @@
  - Learning the principles to write clean code with so many scripts
  - Working on the game with another day job
  - Having Build errors on the first build of the demo
+ - Changing mind about how things should be implemented
 
 
 ### Galery:
@@ -93,4 +97,8 @@ start to build the demo after im done with enemies and sound FX
     Log 5/1/23:
 I returned from Sinaia, while i was there i managed to work on the demo of the game (not on this repo),
 version is still not ready (waiting for some sound fx and a few more features).
-Now the tutorial is still 75%, today i implemented the AudioCRTL -->
+Now the tutorial is still 75%, today i implemented the AudioCRTL 
+
+    Log 15/2/23:
+Some functionalities added here and on the demo: Text palques, beter camera, the violin.
+I need to make the cinematics perfect, fix bugs and i will have a MVP for the CV -->
