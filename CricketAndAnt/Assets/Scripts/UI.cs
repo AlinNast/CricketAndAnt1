@@ -28,6 +28,8 @@ public class UI
     public Sprite EmptyHeart;
     public Sprite FullHeart;
 
+    [Header("Pannels")]
     public GameObject PannelGameOver;
+    public GameObject PanhelLvlComplete;
 
 }

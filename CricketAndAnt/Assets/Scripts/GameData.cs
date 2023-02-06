@@ -11,4 +11,6 @@ public class GameData
     public bool[] keyFound;
     public int lives;
     public bool isFirstBoot;
+
+    public List<LevelData> levelData;
 }

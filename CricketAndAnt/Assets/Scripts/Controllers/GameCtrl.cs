@@ -40,17 +40,18 @@ public class GameCtrl : MonoBehaviour
 
     private void Start()
     {
-        HandleFirstBoot();
-        UpdateHearts();
+        DataController.instance.RefreshData();
+        data = DataController.instance.gameData;
+        RefreshUI();
+
+        ui.PannelGameOver.gameObject.SetActive(false);
+        ui.PanhelLvlComplete.gameObject.SetActive(false);
 
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            ResetData();
-        }
+        
     }
 
     /// <summary>
@@ -59,8 +60,8 @@ public class GameCtrl : MonoBehaviour
     public void PlayerDied(GameObject player)
     {
         player.SetActive(false);
-        CheckLives();
-        //Invoke("RestartLevel", restartDelay);
+
+        StartCoroutine(PauseBeforeReload());
     }
 
     public void PlayerDiedAnimation(GameObject player)
@@ -86,14 +87,15 @@ public class GameCtrl : MonoBehaviour
 
         rb.velocity = Vector2.zero;
 
-        StartCoroutine("PauseBeforeReload", player);
+        //StartCoroutine("PauseBeforeReload", player);
+        StartCoroutine(PauseBeforeReload());
     }
 
-    IEnumerator PauseBeforeReload(GameObject player)
+    IEnumerator PauseBeforeReload()
     {
         yield return new WaitForSeconds(1.5f);
 
-        PlayerDied(player);
+        GameOver();
     }
 
 
@@ -101,9 +103,9 @@ public class GameCtrl : MonoBehaviour
     {
         player.SetActive(false);
 
-        CheckLives();
+        //CheckLives();
         //UpdateHearts();
-        //Invoke("RestartLevel", restartDelay);
+        StartCoroutine(PauseBeforeReload());
     }
 
     public void UpdateCoinCount()
@@ -147,126 +149,50 @@ public class GameCtrl : MonoBehaviour
     }
 
 
-    void RestartLevel()
+    public void RestartLevel()
     {
-        UpdateHearts();
 
-        SceneManager.LoadScene("Level_Intro");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void SaveData()
-    {
-        FileStream fs = new FileStream(dataFilePath, FileMode.Create);
-        formatter.Serialize(fs, data);
-        fs.Close();
-    }
+    
 
-    public void LoadData()
+    public void RefreshUI()
     {
-        if (File.Exists(dataFilePath))
-        {
-            FileStream fs = new FileStream(dataFilePath, FileMode.Open);
-            data = (GameData)formatter.Deserialize(fs);
-            ui.txtCoinCount.text = " x " + data.CoinCount;
-            ui.txtScore.text = "Score: " + data.score;
-            fs.Close();
-        }
+        
+        ui.txtCoinCount.text = " x " + data.CoinCount;
+        ui.txtScore.text = "Score: " + data.score;
+        
 
     }
 
     private void OnEnable()
     {
         Debug.Log("loaded");
-        LoadData();
+        RefreshUI();
     }
 
 
     private void OnDisable()
     {
         Debug.Log("saved");
-        SaveData();
+        DataController.instance.SaveData(data);
     }
-
-    void ResetData()
-    {
-        FileStream fs = new FileStream(dataFilePath, FileMode.Create);
-
-        data.CoinCount = 0;
-        ui.txtCoinCount.text = " x " + data.CoinCount;
-
-        for (int i = 0; i <= 2; i++)
-        {
-            data.keyFound[i] = false;
-        }
-        data.score = 0;
-        ui.txtScore.text = "Score: " + data.score;
-
-        data.lives = 3;
-        formatter.Serialize(fs, data);
-        fs.Close();
-        Debug.Log("data reset");
-    }
-
-    void HandleFirstBoot()
-    {
-        if (data.isFirstBoot)
-        {
-            data.lives = 3;
-
-            data.CoinCount = 0;
-            data.score = 0;
-
-            data.keyFound[0] = false;
-            data.keyFound[1] = false;
-            data.keyFound[2] = false;
-
-            data.isFirstBoot = false;
-        }
-        
-    }
-
-    void UpdateHearts()
-    {
-        if(data.lives == 3)
-        {
-            ui.Heart0.sprite = ui.FullHeart;
-            ui.Heart1.sprite = ui.FullHeart;
-            ui.Heart2.sprite = ui.FullHeart;
-        }
-        else if (data.lives == 2)
-        {
-            ui.Heart0.sprite = ui.EmptyHeart;
-        }
-        else if (data.lives == 1)
-        {
-            ui.Heart0.sprite = ui.EmptyHeart;
-            ui.Heart1.sprite = ui.EmptyHeart;
-        }
-    }
-
-    void CheckLives()
-    {
-        int updatedLives = data.lives;
-        updatedLives -= 1;
-        data.lives = updatedLives;
-
-        UpdateHearts();
-        if (data.lives == 0)
-        {
-            data.lives = 3;
-            SaveData();
-            Invoke("GameOver", restartDelay);
-        }
-        else
-        {
-            SaveData();
-            Invoke("RestartLevel", restartDelay);
-        }
-    }
+    
 
     void GameOver()
     {
         ui.PannelGameOver.SetActive(true);
+        Debug.Log("Game Over");
+    }
 
+    public void LevelComplete()
+    {
+        ui.PanhelLvlComplete.SetActive(true);
+    }
+
+    public void LoadScene(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
 }
