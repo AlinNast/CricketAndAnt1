@@ -1522,6 +1522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 886391046}
   - component: {fileID: 886391045}
+  - component: {fileID: 886391047}
   m_Layer: 0
   m_Name: BG_Night
   m_TagString: Untagged
@@ -1596,6 +1597,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &886391047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886391044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41d3a9e152d555a45984400f252c6150, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timedBanner: 1
+  bannerDuration: 5
 --- !u!1 &886779414
 GameObject:
   m_ObjectHideFlags: 0

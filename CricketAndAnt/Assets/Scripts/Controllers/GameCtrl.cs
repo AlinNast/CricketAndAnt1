@@ -19,10 +19,14 @@ public class GameCtrl : MonoBehaviour
 
     public UI ui;
 
+   // public AudioCtrl audioCtrl;
 
 
 
+    
+    
 
+    bool isPaused = false;
     string dataFilePath;
     BinaryFormatter formatter;
 
@@ -44,8 +48,13 @@ public class GameCtrl : MonoBehaviour
         data = DataController.instance.gameData;
         RefreshUI();
 
+        //audioCtrl = AudioCtrl.Instance
+
         ui.PannelGameOver.gameObject.SetActive(false);
         ui.PanhelLvlComplete.gameObject.SetActive(false);
+        ui.PannelPause.gameObject.SetActive(false);
+
+
 
     }
 
@@ -194,5 +203,47 @@ public class GameCtrl : MonoBehaviour
     public void LoadScene(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
+    }
+
+    public void PauseGame()
+    {
+        if (!isPaused)
+        {
+            isPaused = true;
+            ui.PannelPause.gameObject.SetActive(true );
+        }
+        else
+        {
+            isPaused = false;
+            ui.PannelPause.gameObject.SetActive(false );
+        }
+    }
+
+    public void ToogleMusic()
+    {
+        if (data.musicOn)
+        {
+            data.musicOn = false;
+            AudioCtrl.Instance.bgMusic.SetActive(false);
+        }
+        else
+        {
+            data.musicOn = true;
+            AudioCtrl.Instance.bgMusic.SetActive(true);
+        }
+    }
+
+    public void ToogleSound()
+    {
+        if (data.soundOn)
+        {
+            data.soundOn = false;
+            AudioCtrl.Instance.soundOn = false;
+        }
+        else
+        {
+            data.soundOn = true;
+            AudioCtrl.Instance.soundOn = false;
+        }
     }
 }

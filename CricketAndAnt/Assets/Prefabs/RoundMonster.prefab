@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4476467744408283496}
   - component: {fileID: 4476467744408283497}
   - component: {fileID: 4476467744408283498}
+  - component: {fileID: 1675525378}
   m_Layer: 0
   m_Name: RoundMonster
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4476467744408283499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 7.623, y: -0.4176, z: 0}
-  m_LocalScale: {x: 0.4937, y: 0.4964, z: 1}
+  m_LocalScale: {x: 0.3477623, y: 0.3087608, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4132014020027227219}
@@ -155,6 +156,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.82, y: 3.635861}
   m_EdgeRadius: 0
+--- !u!114 &1675525378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4476467744408283499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d212f0d64dd7124586f30b97c8adaa0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &8296289586322535400
 GameObject:
   m_ObjectHideFlags: 0

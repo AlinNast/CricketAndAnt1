@@ -31,5 +31,7 @@ public class UI
     [Header("Pannels")]
     public GameObject PannelGameOver;
     public GameObject PanhelLvlComplete;
+    public GameObject PannelPause;
+
 
 }

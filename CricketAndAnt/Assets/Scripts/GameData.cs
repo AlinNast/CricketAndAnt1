@@ -12,5 +12,9 @@ public class GameData
     public int lives;
     public bool isFirstBoot;
 
+    [Header("LevelData")]
     public List<LevelData> levelData;
+
+    [Header("User Settings")]
+    public bool musicOn, soundOn;
 }

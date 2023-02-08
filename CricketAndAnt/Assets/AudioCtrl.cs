@@ -21,9 +21,27 @@ public class AudioCtrl : MonoBehaviour
             Instance = this;
         }
 
-        if (bgMusicOn)
+        CheckSoundStatus();
+    }
+
+    private void CheckSoundStatus()
+    {
+        if (DataController.instance.gameData.musicOn)
         {
             bgMusic.SetActive(true);
+        }
+        else
+        {
+            bgMusic.SetActive(false);
+        }
+
+        if (DataController.instance.gameData.soundOn)
+        {
+            soundOn = true;
+        }
+        else
+        {
+            soundOn = false;
         }
     }
 

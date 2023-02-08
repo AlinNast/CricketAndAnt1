@@ -28,6 +28,6 @@ public class MoovingPlatform : MonoBehaviour
         {
             nextPosition = Pos1.position;
         }
-        transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed = Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, nextPosition, speed * Time.deltaTime);
     }
 }
