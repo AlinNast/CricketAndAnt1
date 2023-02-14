@@ -1,4 +1,5 @@
 using GoogleMobileAds.Api;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,16 @@ public class AdsCtrl : MonoBehaviour
 {
     public static AdsCtrl Instance;
     public string Android_AdMob_Banner_ID;
+    public string Android_AdMob_Interstitial_ID;
+
+    public bool showBanner, showInterstitial;
 
     public bool testMode;
 
     BannerView bannerView;
+    InterstitialAd InterstitialAd;
+
+    AdRequest request;
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +52,17 @@ public class AdsCtrl : MonoBehaviour
 
     public void ShowBanner()
     {
-        bannerView.Show();
+        if (showBanner)
+        {
+            bannerView.Show();
+        }
     }
+        
 
     public void HideBanner()
     {
-        bannerView.Hide();
+        if (showBanner)
+            bannerView.Hide();
     }
 
     public void HideBanner(float duration)
@@ -64,13 +76,53 @@ public class AdsCtrl : MonoBehaviour
         bannerView.Hide();
     }
 
+    void RequestInterstitialAd()
+    {
+        if (testMode)
+        {
+            InterstitialAd = new InterstitialAd(Android_AdMob_Interstitial_ID);
+
+        }
+        else
+        {
+            // code for live ad
+        }
+        request = new AdRequest.Builder().Build();
+        InterstitialAd.LoadAd(request);
+
+        InterstitialAd.OnAdClosed += HandleAdClose;
+    }
+
+    public void HandleAdClose(object sernder, EventArgs args)
+    {
+        InterstitialAd.Destroy();
+        RequestInterstitialAd();
+    }
+
+    public void ShowIntertitialAd()
+    {
+        if (showInterstitial)
+        {
+            if (InterstitialAd.IsLoaded())
+            {
+                InterstitialAd.Show();
+            }
+        }
+        
+    }
+
     private void OnDisable()
     {
         bannerView.Destroy();
+
+        InterstitialAd.Destroy();
     }
 
     private void OnEnable()
     {
-        RequestBanner();
+        if(showBanner)
+            RequestBanner();
+        if(showInterstitial)
+            RequestInterstitialAd();
     }
 }

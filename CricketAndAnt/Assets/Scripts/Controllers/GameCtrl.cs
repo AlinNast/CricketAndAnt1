@@ -10,25 +10,15 @@ using TMPro;
 public class GameCtrl : MonoBehaviour
 {
     public static GameCtrl instance;
-
-    public float restartDelay;
-
     public GameData data;
-
-    public int coinValue;
-
     public UI ui;
 
-   // public AudioCtrl audioCtrl;
-
-
-
+    public float restartDelay;
     
-    
-
     bool isPaused = false;
     string dataFilePath;
     BinaryFormatter formatter;
+
 
     private void Awake()
     {
@@ -38,33 +28,22 @@ public class GameCtrl : MonoBehaviour
         formatter = new BinaryFormatter();
 
         dataFilePath = Application.persistentDataPath + "/game.dat";
-
-        Debug.Log(dataFilePath);
     }
 
     private void Start()
     {
         DataController.instance.RefreshData();
         data = DataController.instance.gameData;
-        RefreshUI();
 
-        //audioCtrl = AudioCtrl.Instance
-
+        ui.PannelMobileUi.gameObject.SetActive(true);
         ui.PannelGameOver.gameObject.SetActive(false);
         ui.PanhelLvlComplete.gameObject.SetActive(false);
         ui.PannelPause.gameObject.SetActive(false);
-
-
-
     }
 
-    private void Update()
-    {
-        
-    }
 
     /// <summary>
-    /// Respawns the player
+    /// Kills the player and shows Game Over pannel
     /// </summary>
     public void PlayerDied(GameObject player)
     {
@@ -112,49 +91,7 @@ public class GameCtrl : MonoBehaviour
     {
         player.SetActive(false);
 
-        //CheckLives();
-        //UpdateHearts();
         StartCoroutine(PauseBeforeReload());
-    }
-
-    public void UpdateCoinCount()
-    {
-        data.CoinCount++;
-
-        ui.txtCoinCount.text = " x " + data.CoinCount;
-
-        UpdateScoreCount(coinValue);
-    }
-
-    public void UpdateScoreCount(int value)
-    {
-        data.score += value;
-
-        ui.txtScore.text = " Score: " + data.score;
-    }
-
-    public void BulletHitEnemy(Transform enemy)
-    {
-        Destroy(enemy.gameObject);
-        UpdateScoreCount(49);
-    }
-
-    public void UpdateKeyCount(int KeyNum)
-    {
-        data.keyFound[KeyNum] = true;
-
-        if (KeyNum == 0)
-        {
-            ui.Key0.sprite = ui.Key0Enabled;
-        }
-        else if (KeyNum == 1)
-        {
-            ui.Key1.sprite = ui.Key1Enabled;
-        }
-        else if (KeyNum == 2)
-        {
-            ui.Key2.sprite = ui.Key2Enabled;
-        }
     }
 
 
@@ -164,39 +101,23 @@ public class GameCtrl : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    
-
-    public void RefreshUI()
-    {
-        
-        ui.txtCoinCount.text = " x " + data.CoinCount;
-        ui.txtScore.text = "Score: " + data.score;
-        
-
-    }
-
-    private void OnEnable()
-    {
-        Debug.Log("loaded");
-        RefreshUI();
-    }
-
 
     private void OnDisable()
     {
-        Debug.Log("saved");
         DataController.instance.SaveData(data);
     }
     
 
     void GameOver()
     {
+        ui.PannelMobileUi.SetActive(false);
         ui.PannelGameOver.SetActive(true);
-        Debug.Log("Game Over");
     }
 
     public void LevelComplete()
     {
+        ui.PannelMobileUi.SetActive(false);
+
         ui.PanhelLvlComplete.SetActive(true);
     }
 
@@ -210,12 +131,18 @@ public class GameCtrl : MonoBehaviour
         if (!isPaused)
         {
             isPaused = true;
+            //AdsCtrl.Instance.ShowBanner();
             ui.PannelPause.gameObject.SetActive(true );
+            ui.PannelMobileUi.SetActive(false);
+
         }
         else
         {
             isPaused = false;
+            //AdsCtrl.Instance.HideBanner();
             ui.PannelPause.gameObject.SetActive(false );
+            ui.PannelMobileUi.SetActive(true);
+
         }
     }
 

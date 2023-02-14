@@ -20,14 +20,9 @@ public class PlayerCtrl : MonoBehaviour
 	[Tooltip("positive int to expand feet collision area")]
 	public float feetRadius;
 
-    [Tooltip("Bullet object slot")]
-    public GameObject leftBullet, rightBullet;
 
 	public GameObject GarbageCollector;
 
-    [Tooltip("bullet spawn location slot")]
-    public Transform leftBulletSpownPos;
-	public Transform rightBulletSpownPos;
 
     [Tooltip("i forgot what this is")]
     public LayerMask whatIsGround;
@@ -203,11 +198,12 @@ public class PlayerCtrl : MonoBehaviour
 	{
 		if (canFire)
 		{
-            if (!spriteRenderer.flipX)
-                Instantiate(leftBullet, leftBulletSpownPos.position, Quaternion.identity);
-            if (spriteRenderer.flipX)
-                Instantiate(rightBullet, rightBulletSpownPos.position, Quaternion.identity);
+			Debug.Log("note");
         }
+		else
+		{
+			Debug.Log("cry");
+		}
 	
     }
 
@@ -258,16 +254,16 @@ public class PlayerCtrl : MonoBehaviour
 			case "Coin":
 				if (SFXon)
 					SFXCtrl.Instance.ShowCoinSparkle(collider.gameObject.transform.position);
-				GameCtrl.instance.UpdateCoinCount();
 				break;
+
 			case "Violin":
 				canFire = true;
 				Vector3 violinPos = collider.gameObject.transform.position;
 				Destroy(collider.gameObject);
                 if (SFXon)
                     SFXCtrl.Instance.ShowViolinSparckle(violinPos);
-				
 				break;
+
 			case "Water":
 				GarbageCollector.SetActive(false);
 				if (SFXon)
@@ -277,16 +273,11 @@ public class PlayerCtrl : MonoBehaviour
 				}
                 GameCtrl.instance.PlayerDrowned(transform.gameObject);
                 break;
+
 			default:
 				break;
 		}
 	}
 
-	/// <summary>
-	/// This draws a sphere on the feet componentf for visual debuging
-	/// </summary>
-	private void OnDrawGizmos()
-	{
-		Gizmos.DrawWireCube(feet.position, new Vector3(boxWidth, boxHeight, 0));
-	}
+		
 }

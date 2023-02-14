@@ -20,17 +20,13 @@ public class TextTriggerCtrl : MonoBehaviour
         text.color = new Color(1, 1, 1, 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         backgroundSR.color = new Color(0.09433961f, 0.0467248f, 0.0467248f, 0.5f);
         text.color = new Color(1, 1, 1, 1);
-        Debug.Log("enter plaque");
+       
 
     }
 
@@ -38,6 +34,6 @@ public class TextTriggerCtrl : MonoBehaviour
     {
         text.color = new Color(1, 1, 1, 0);
         backgroundSR.color = new Color(1, 1, 1, 0);
-        Debug.Log("exit plaque");
+        
     }
 }

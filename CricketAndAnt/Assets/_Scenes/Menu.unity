@@ -1066,7 +1066,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1854413672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1080,6 +1080,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Android_AdMob_Banner_ID: ca-app-pub-3940256099942544/6300978111
+  Android_AdMob_Interstitial_ID: ca-app-pub-3940256099942544/1033173712
+  showBanner: 1
+  showInterstitial: 1
   testMode: 1
 --- !u!4 &1854413673
 Transform:

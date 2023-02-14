@@ -11,7 +11,7 @@ public class EnemyHeadCtrl : MonoBehaviour
         {
             enemy.tag = "Untagged";
             Destroy(enemy);
-            GameCtrl.instance.UpdateScoreCount(49);
+            SFXCtrl.Instance.ShowCoinSparkle(enemy.transform.position);
         }
     }
 }

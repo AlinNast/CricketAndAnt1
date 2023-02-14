@@ -6,10 +6,7 @@ using UnityEngine;
 [Serializable]
 public class GameData
 {
-    public int CoinCount; // track the nr of coins collected
-    public int score;
-    public bool[] keyFound;
-    public int lives;
+    
     public bool isFirstBoot;
 
     [Header("LevelData")]

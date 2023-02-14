@@ -20,9 +20,6 @@ public class SFXCtrl : MonoBehaviour
         
     }
 
-    /// <summary>
-    /// Shows the coin sparkle effect
-    /// </summary>
     public void ShowCoinSparkle(Vector3 position)
     {
         Instantiate(sfx.sfx_coin_pickup, position, Quaternion.identity);

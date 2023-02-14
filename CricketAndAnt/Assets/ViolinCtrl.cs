@@ -11,7 +11,7 @@ public class ViolinCtrl : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            GameCtrl.instance.UpdateKeyCount(KeyNr);
+            
 
             Destroy(gameObject);
         }

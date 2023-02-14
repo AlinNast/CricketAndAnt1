@@ -37,6 +37,15 @@ public class LevelButtonCtrl : MonoBehaviour
         }
     }
 
+    public void StartLevel(string sceneName)
+    {
+        if(DataController.instance.IsUnlocked(levelNumber - 1))
+        {
+            SceneManager.LoadScene(sceneName);
+        }
+        
+    }
+
     void ButtonStatus()
     {
         bool unlocked = DataController.instance.IsUnlocked(levelNumber-1);

@@ -32,11 +32,10 @@ public class DataController : MonoBehaviour
     {
         if (File.Exists(dataFilePath))
         {
-            Debug.Log(dataFilePath);
+            
             FileStream fs = new FileStream(dataFilePath, FileMode.Open);
             gameData = (GameData)formatter.Deserialize(fs);
             fs.Close();
-            Debug.Log("Refresed Data");
         }
     }
 
@@ -45,7 +44,6 @@ public class DataController : MonoBehaviour
         FileStream fs = new FileStream(dataFilePath, FileMode.Create);
         formatter.Serialize(fs, gameData);
         fs.Close();
-        Debug.Log("Data saved");
     }
 
     public void SaveData(GameData gameData)
@@ -53,7 +51,6 @@ public class DataController : MonoBehaviour
         FileStream fs = new FileStream(dataFilePath, FileMode.Create);
         formatter.Serialize(fs, gameData);
         fs.Close();
-        Debug.Log("Data saved");
     }
 
 

@@ -5,15 +5,15 @@ using UnityEngine;
 public class MobileUiCtrl : MonoBehaviour
 {
     public GameObject player;
-
     PlayerCtrl playerCtrl;
-    // Start is called before the first frame update
+    
+
     void Start()
     {
         playerCtrl = player.GetComponent<PlayerCtrl>();
     }
 
-    // Update is called once per frame
+    
     public void MobileMoveLeft()
     {
         playerCtrl.MobileMoveLeft();
