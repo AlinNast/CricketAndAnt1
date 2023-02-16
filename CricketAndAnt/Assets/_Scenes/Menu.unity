@@ -1006,19 +1006,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData:
-    CoinCount: 0
-    score: 0
-    keyFound: 
-    lives: 0
     isFirstBoot: 0
     levelData:
     - isUnlocked: 1
-      hasStar: 1
+      hasStar: 0
       levelNumber: 1
-    - isUnlocked: 1
-      hasStar: 1
+    - isUnlocked: 0
+      hasStar: 0
       levelNumber: 2
-    - isUnlocked: 1
+    - isUnlocked: 0
       hasStar: 0
       levelNumber: 3
     - isUnlocked: 0
@@ -1079,11 +1075,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25547dd98a8928142aeb3e582a5cb1ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Android_AdMob_Banner_ID: ca-app-pub-3940256099942544/6300978111
-  Android_AdMob_Interstitial_ID: ca-app-pub-3940256099942544/1033173712
-  showBanner: 1
-  showInterstitial: 1
-  testMode: 1
 --- !u!4 &1854413673
 Transform:
   m_ObjectHideFlags: 0

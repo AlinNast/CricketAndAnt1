@@ -68,4 +68,9 @@ public class LevelButtonCtrl : MonoBehaviour
             star.gameObject.SetActive(false);
         }
     }
+
+    public void SaveData()
+    {
+        DataController.instance.SaveData();
+    }
 }
