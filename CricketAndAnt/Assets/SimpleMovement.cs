@@ -44,7 +44,11 @@ public class SimpleMovement : MonoBehaviour
     {
         if (!collision.gameObject.CompareTag("Player"))
         {
-            speed = -speed;
+            if (speed == 0)
+            {
+                speed = -speed;
+            }
+            
         }
     }
 }

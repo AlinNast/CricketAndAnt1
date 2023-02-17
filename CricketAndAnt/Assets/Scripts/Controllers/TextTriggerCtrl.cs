@@ -24,8 +24,12 @@ public class TextTriggerCtrl : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        backgroundSR.color = new Color(0.09433961f, 0.0467248f, 0.0467248f, 0.5f);
-        text.color = new Color(1, 1, 1, 1);
+        if(other.gameObject.tag == "Player")
+        {
+            backgroundSR.color = new Color(0.09433961f, 0.0467248f, 0.0467248f, 0.5f);
+            text.color = new Color(1, 1, 1, 1);
+        }
+        
        
 
     }

@@ -53,4 +53,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/EntryScene4.unity
     guid: d4baa3a354bc06740901eae67df528fd
+  - enabled: 1
+    path: Assets/_Scenes/ExitScene4.unity
+    guid: d32f98c0a8884fe4bad9440102c8f21a
+  - enabled: 1
+    path: Assets/_Scenes/EntryScene5.unity
+    guid: 4998de7cea2085a47a3cdaf133973a43
+  - enabled: 1
+    path: Assets/_Scenes/ExitScene5.unity
+    guid: d2415091b00acc3479c6148141ab7c91
+  - enabled: 1
+    path: Assets/_Scenes/EntryScene6.unity
+    guid: 4e71392c082ec60479da33d1f7a69c6b
   m_configObjects: {}

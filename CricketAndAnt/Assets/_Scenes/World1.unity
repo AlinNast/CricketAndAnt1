@@ -288,13 +288,13 @@ MonoBehaviour:
       - m_Target: {fileID: 49969866}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
         m_MethodName: StartLevel
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
+          m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: EntryScene5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &49969864
@@ -2422,13 +2422,13 @@ MonoBehaviour:
       - m_Target: {fileID: 1149945944}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
         m_MethodName: StartLevel
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
+          m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: EntryScene6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1149945942
