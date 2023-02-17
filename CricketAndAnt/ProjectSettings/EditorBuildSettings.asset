@@ -65,4 +65,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/EntryScene6.unity
     guid: 4e71392c082ec60479da33d1f7a69c6b
+  - enabled: 1
+    path: Assets/_Scenes/ExitScene6.unity
+    guid: d4e2f234e473b53429705bb6fe683cd8
+  - enabled: 1
+    path: Assets/_Scenes/EntryScene7.unity
+    guid: b18cf8169bbe70b469d6c271819a4c99
   m_configObjects: {}
