@@ -54065,13 +54065,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3397956111475230068, guid: ac04629fcb5ac724099260e3c0b5f0b4, type: 3}
-  gizmoPosition: {x: -41, y: 14}
+  gizmoPosition: {x: 95, y: 38}
   gridOrigin: {x: 0, y: 0, z: 0}
   mapSize: {x: 0, y: 0}
   tileSize: {x: 0, y: 0}
   brushMode: 0
-  paintMode: 0
-  colliderMode: 1
+  paintMode: 1
+  colliderMode: 0
   groupMode: 0
   copyMode: 0
   workingModeBool: 0
@@ -87869,15 +87869,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8973050931717443287, guid: 3f566d9f5115d804596114168c366b2e, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5.0375
+      value: 9.319375
       objectReference: {fileID: 0}
     - target: {fileID: 8973050931717443287, guid: 3f566d9f5115d804596114168c366b2e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2
+      value: 3.7
       objectReference: {fileID: 0}
     - target: {fileID: 8973050931717443287, guid: 3f566d9f5115d804596114168c366b2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: -3.36
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f566d9f5115d804596114168c366b2e, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ViolinCtrl : MonoBehaviour
 {
-    public int KeyNr;
+    
 
 
     private void OnTriggerEnter2D(Collider2D collider)
