@@ -92,7 +92,7 @@ public class PlayerCtrl : MonoBehaviour
         }
         else
         {
-			StopMove();
+			//StopMove();
         }
 
 		if (Input.GetButtonDown("Jump"))
@@ -110,15 +110,30 @@ public class PlayerCtrl : MonoBehaviour
 		// button controlls
 		if (leftPressed)
 		{
-			MoveHorizontal(-speedBoost);
+            if (isJumping)
+			{
+                MoveHorizontal(-speedBoost *2);
+            }
+			else
+			{
+                MoveHorizontal(-speedBoost);
+            }
+			
 		}
         if (rightPressed)
         {
-            MoveHorizontal(speedBoost);
+            if (isJumping)
+            {
+                MoveHorizontal(speedBoost * 2);
+            }
+            else
+            {
+                MoveHorizontal(speedBoost);
+            }
         }
 		if (jumpPressed)
 		{
-			jumpPressed = false;
+            jumpPressed = false;
 			Jump();
 		}
 		if (shootPressed)
@@ -211,22 +226,23 @@ public class PlayerCtrl : MonoBehaviour
 	// Mobile controlls
 	public void MobileMoveLeft()
 	{
-		leftPressed = true;
+        leftPressed = true;
 	}
 	public void MobileMoveRight() 
-	{ 
-		rightPressed = true;
+	{
+        rightPressed = true;
 	}
 
 	public void MobileStop()
 	{
-		leftPressed = false;
+        leftPressed = false;
 		rightPressed = false;
+		StopMove();
 	}
 
 	public void MobileJump()
 	{
-		jumpPressed = true;
+        jumpPressed = true;
 	}
 
 	public void MobileShoot()
@@ -265,12 +281,13 @@ public class PlayerCtrl : MonoBehaviour
 				break;
 
 			case "Water":
-				GarbageCollector.SetActive(false);
+				//GarbageCollector.SetActive(false);
 				if (SFXon)
 				{
 					SFXCtrl.Instance.ShowWaterSplash(collider.gameObject.transform.position);
 					AudioCtrl.Instance.Splash(transform.position);
 				}
+				//this next line might be buggi
                 GameCtrl.instance.PlayerDrowned(transform.gameObject);
                 break;
 

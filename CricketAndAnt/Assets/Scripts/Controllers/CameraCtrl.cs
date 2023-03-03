@@ -10,7 +10,7 @@ public class CameraCtrl : MonoBehaviour
     public GameObject player;
     SpriteRenderer playerSR;
 
-    public Transform backGround;
+    
 
    
     public float Yoffset;
@@ -21,7 +21,6 @@ public class CameraCtrl : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(player.transform.position.x + Xoffset, player.transform.position.y + Yoffset, -10);
-        backGround.position = new Vector3(player.transform.position.x + Xoffset, player.transform.position.y + Yoffset, 0);
         playerSR = player.GetComponent<SpriteRenderer>();
     }
 
