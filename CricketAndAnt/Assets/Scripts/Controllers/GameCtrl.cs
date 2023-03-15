@@ -146,31 +146,32 @@ public class GameCtrl : MonoBehaviour
         }
     }
 
-    public void ToogleMusic()
+    
+    public void PlayLevelTheme()
     {
-        if (data.musicOn)
-        {
-            data.musicOn = false;
-            AudioCtrl.Instance.bgMusic.SetActive(false);
-        }
-        else
-        {
-            data.musicOn = true;
-            AudioCtrl.Instance.bgMusic.SetActive(true);
-        }
+        AudioController.Instance.PlayLevelTheme();
     }
 
-    public void ToogleSound()
+    public void PlayMenuTheme()
     {
-        if (data.soundOn)
+        AudioController.Instance.PlayMenuTheme();
+    }
+   
+    public void ToggleSound()
+    {
+        DataController.instance.gameData.soundOn = !DataController.instance.gameData.soundOn;
+    }
+
+    public void ToggleMusic()
+    {
+        DataController.instance.gameData.musicOn = !DataController.instance.gameData.musicOn;
+        if (DataController.instance.gameData.musicOn)
         {
-            data.soundOn = false;
-            AudioCtrl.Instance.soundOn = false;
+            AudioController.Instance.MuteMusic();
         }
         else
         {
-            data.soundOn = true;
-            AudioCtrl.Instance.soundOn = false;
+            AudioController.Instance.UnMuteMusic();
         }
     }
 }

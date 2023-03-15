@@ -188,7 +188,7 @@ public class PlayerCtrl : MonoBehaviour
 	{
 		if (isGrounded)
 		{
-			AudioCtrl.Instance.PlayerJump(transform.position);
+			AudioController.Instance.PlayerJump(transform.position);
             rigidBody.AddForce(new Vector2(rigidBody.velocity.x, jumpSpeed));
             isJumping = true;
             animator.SetInteger("State", 2);
@@ -285,7 +285,7 @@ public class PlayerCtrl : MonoBehaviour
 				if (SFXon)
 				{
 					SFXCtrl.Instance.ShowWaterSplash(collider.gameObject.transform.position);
-					AudioCtrl.Instance.Splash(transform.position);
+                    AudioController.Instance.Splash(transform.position);
 				}
 				//this next line might be buggi
                 GameCtrl.instance.PlayerDrowned(transform.gameObject);

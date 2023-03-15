@@ -386,11 +386,7 @@ MonoBehaviour:
   jumpSpeed: 913
   feet: {fileID: 2736954161876115172}
   feetRadius: 0.41
-  leftBullet: {fileID: 8390458365077093658, guid: be0d33f89932ec34a8b59c1f280cfe5f, type: 3}
-  rightBullet: {fileID: 8390458365077093658, guid: 7875ccdf33eb12c4ab1f064f841f9869, type: 3}
   GarbageCollector: {fileID: 0}
-  leftBulletSpownPos: {fileID: 0}
-  rightBulletSpownPos: {fileID: 0}
   whatIsGround:
     serializedVersion: 2
     m_Bits: 8

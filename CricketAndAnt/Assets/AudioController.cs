@@ -94,4 +94,14 @@ public class AudioController : MonoBehaviour
         menuMusic.SetActive(true);
     }
 
+    public void MuteMusic()
+    {
+        levelMusic.SetActive(false);
+        menuMusic.SetActive(false);
+    }
+
+    public void UnMuteMusic()
+    {
+        levelMusic.SetActive(false);
+    }
 }

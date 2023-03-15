@@ -297,6 +297,18 @@ MonoBehaviour:
           m_StringArgument: EntryScene5
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &49969864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -867,6 +879,18 @@ MonoBehaviour:
           m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: EntryScene2
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &415987107
@@ -1449,6 +1473,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &810275794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1996,6 +2032,18 @@ MonoBehaviour:
           m_StringArgument: EntryScene1
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &937853874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,6 +2096,74 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lockedBtn: {fileID: 7001558939514288092, guid: 927745ee9660f8b4491f65f3dad88f8f, type: 3}
   unlockedBtn: {fileID: 0}
+--- !u!1001 &966587751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 903.1478
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 246.66406
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.968359
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482118597551, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_Name
+      value: AudioController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+--- !u!114 &966587752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+  m_PrefabInstance: {fileID: 966587751}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f481b0051b54d1847a74109dece6c5ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1013811001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2144,6 +2260,18 @@ MonoBehaviour:
           m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: EntryScene3
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1013811004
@@ -2431,6 +2559,18 @@ MonoBehaviour:
           m_StringArgument: EntryScene6
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1149945942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2645,7 +2785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1324498856
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2871,6 +3011,18 @@ MonoBehaviour:
           m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: EntryScene4
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 966587752}
+        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
+        m_MethodName: PlayLevelTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1343191906

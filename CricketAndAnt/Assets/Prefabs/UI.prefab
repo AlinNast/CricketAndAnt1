@@ -134,6 +134,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2486323391370473835}
+        m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
+        m_MethodName: PlayMenuTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &128448259
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +270,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2486323391370473835}
         m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
-        m_MethodName: ToogleSound
+        m_MethodName: ToggleSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -618,6 +630,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
         m_MethodName: LoadScene
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2486323391370473835}
+        m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
+        m_MethodName: PlayMenuTheme
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1126,7 +1150,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2486323391370473835}
         m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
-        m_MethodName: ToogleMusic
+        m_MethodName: ToggleMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1664,10 +1688,10 @@ MonoBehaviour:
   data:
     isFirstBoot: 0
     levelData: []
-    musicOn: 0
-    soundOn: 0
+    musicOn: 1
+    soundOn: 1
   ui:
-    PannelMobileUi: {fileID: 0}
+    PannelMobileUi: {fileID: 2486323392783399489}
     PannelGameOver: {fileID: 2486323393236023277}
     PanhelLvlComplete: {fileID: 2486323392615900941}
     PannelPause: {fileID: 1451357029}
@@ -2163,58 +2187,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!1 &2486323392019052306
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2486323392019052307}
-  - component: {fileID: 2486323392019052304}
-  m_Layer: 0
-  m_Name: AudioCtrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2486323392019052307
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486323392019052306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2486323393158232330}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2486323392019052304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2486323392019052306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0763af84e77d97242b0ea9b762b33d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  soundOn: 1
-  bgMusicOn: 1
-  bgMusic: {fileID: 0}
-  playerAudio:
-    playerJump: {fileID: 8300000, guid: e5916fbc63e7c4443abd412cb3bd6e2a, type: 3}
-    breakCrate: {fileID: 8300000, guid: b668216871e694c2f9bb965f86b2faf9, type: 3}
-    splash: {fileID: 8300000, guid: a9201c2e5628d4cda9e92854595b2171, type: 3}
-  player: {fileID: 0}
+      - m_Target: {fileID: 2486323391370473835}
+        m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
+        m_MethodName: PlayMenuTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2486323392102599420
 GameObject:
   m_ObjectHideFlags: 0
@@ -2592,7 +2576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -530, y: 71}
+  m_AnchoredPosition: {x: -530, y: -106}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2486323392359226256
@@ -3144,22 +3128,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2486323391644748054}
-          m_TargetAssemblyTypeName: MobileUiCtrl, Assembly-CSharp
-          m_MethodName: MobileStop
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &2486323392615900941
 GameObject:
   m_ObjectHideFlags: 0
@@ -3411,7 +3379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -343, y: -119}
+  m_AnchoredPosition: {x: -283, y: -119}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2486323392679735018
@@ -4527,6 +4495,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2486323391370473835}
+        m_TargetAssemblyTypeName: GameCtrl, Assembly-CSharp
+        m_MethodName: PlayMenuTheme
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2486323393158232325
 GameObject:
   m_ObjectHideFlags: 0
@@ -4558,7 +4538,6 @@ Transform:
   - {fileID: 2486323391644748049}
   - {fileID: 2486323392102599421}
   - {fileID: 2486323391370473834}
-  - {fileID: 2486323392019052307}
   m_Father: {fileID: 2486323392945900597}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
