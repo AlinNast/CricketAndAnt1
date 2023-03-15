@@ -39,7 +39,7 @@ public class AudioController : MonoBehaviour
         {
             menuMusic.SetActive(true);
             levelMusic.SetActive(false);
-            //Debug.Log("this ckeck works");
+            
 
         }
         else
@@ -84,6 +84,7 @@ public class AudioController : MonoBehaviour
 
     public void PlayLevelTheme()
     {
+        
         menuMusic.SetActive(false);
         levelMusic.SetActive(true);
     }
@@ -102,6 +103,6 @@ public class AudioController : MonoBehaviour
 
     public void UnMuteMusic()
     {
-        levelMusic.SetActive(false);
+        levelMusic.SetActive(true);
     }
 }

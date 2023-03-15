@@ -287,18 +287,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 49969866}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: EntryScene5
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
@@ -307,6 +295,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 49969866}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: EntryScene5
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &49969864
@@ -871,18 +871,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 415987109}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: EntryScene2
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
@@ -891,6 +879,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 415987109}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: EntryScene2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &415987107
@@ -1463,24 +1463,24 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 810275796}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 810275796}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 8
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2022,18 +2022,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 937853876}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: EntryScene1
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
@@ -2042,6 +2030,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 937853876}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: EntryScene1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &937853874
@@ -2153,17 +2153,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
---- !u!114 &966587752 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
-  m_PrefabInstance: {fileID: 966587751}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f481b0051b54d1847a74109dece6c5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1013811001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2252,18 +2241,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013811006}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: EntryScene3
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
@@ -2272,6 +2249,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1013811006}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: EntryScene3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1013811004
@@ -2549,18 +2538,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1149945944}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: EntryScene6
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
@@ -2569,6 +2546,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1149945944}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: EntryScene6
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1149945942
@@ -3003,18 +2992,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1343191908}
         m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
-        m_MethodName: StartLevel
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: EntryScene4
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 966587752}
-        m_TargetAssemblyTypeName: AudioController, Assembly-CSharp
         m_MethodName: PlayLevelTheme
         m_Mode: 1
         m_Arguments:
@@ -3023,6 +3000,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1343191908}
+        m_TargetAssemblyTypeName: LevelButtonCtrl, Assembly-CSharp
+        m_MethodName: StartLevel
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: EntryScene4
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1343191906

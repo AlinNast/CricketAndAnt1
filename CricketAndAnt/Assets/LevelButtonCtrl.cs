@@ -73,4 +73,9 @@ public class LevelButtonCtrl : MonoBehaviour
     {
         DataController.instance.SaveData();
     }
+
+    public void PlayLevelTheme()
+    {
+        AudioController.Instance.PlayLevelTheme();
+    }
 }

@@ -188,6 +188,7 @@ public class PlayerCtrl : MonoBehaviour
 	{
 		if (isGrounded)
 		{
+			Debug.Log("works");
 			AudioController.Instance.PlayerJump(transform.position);
             rigidBody.AddForce(new Vector2(rigidBody.velocity.x, jumpSpeed));
             isJumping = true;
