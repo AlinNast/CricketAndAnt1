@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 268195348}
   - component: {fileID: 268195347}
   - component: {fileID: 268195346}
+  - component: {fileID: 268195349}
   m_Layer: 5
   m_Name: btnCredits
   m_TagString: Untagged
@@ -273,7 +274,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 268195347}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 268195349}
+        m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Credits
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &268195347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +325,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268195344}
   m_CullTransparentMesh: 1
+--- !u!114 &268195349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268195344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cad36b412d70f44ca24a6c90b3d8ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &371819517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,22 +1280,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
-      propertyPath: playerAudio.Violin1
-      value: 
-      objectReference: {fileID: 8300000, guid: dfce14d8621949245a46b17973842649, type: 3}
-    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
-      propertyPath: playerAudio.Violin2
-      value: 
-      objectReference: {fileID: 8300000, guid: c009d7f08d4d44b4680be3f04fca804b, type: 3}
-    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
-      propertyPath: playerAudio.Violin3
-      value: 
-      objectReference: {fileID: 8300000, guid: 9551aa0481f26c54ab07199c4050f83a, type: 3}
-    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
-      propertyPath: playerAudio.Violin4
-      value: 
-      objectReference: {fileID: 8300000, guid: 0a39cf4866c906449ac2aafe3909a9bf, type: 3}
     - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1318,10 +1327,6 @@ PrefabInstance:
     - target: {fileID: 1153856482118597551, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
       propertyPath: m_Name
       value: AudioController
-      objectReference: {fileID: 0}
-    - target: {fileID: 1153856482204667203, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
-      propertyPath: m_Volume
-      value: 0.746
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}

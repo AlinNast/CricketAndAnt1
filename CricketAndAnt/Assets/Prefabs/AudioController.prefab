@@ -183,6 +183,10 @@ MonoBehaviour:
     Cri1: {fileID: 8300000, guid: aeaa5704b7f76704a897145c8418a88b, type: 3}
     Cri2: {fileID: 8300000, guid: 9be5610bb3c25e94fa5635db85bcd579, type: 3}
     Cri3: {fileID: 8300000, guid: 9d55e08632590fc4f983a58bacdc57dc, type: 3}
+    Violin1: {fileID: 8300000, guid: dfce14d8621949245a46b17973842649, type: 3}
+    Violin2: {fileID: 8300000, guid: c009d7f08d4d44b4680be3f04fca804b, type: 3}
+    Violin3: {fileID: 8300000, guid: 9551aa0481f26c54ab07199c4050f83a, type: 3}
+    Violin4: {fileID: 8300000, guid: 0a39cf4866c906449ac2aafe3909a9bf, type: 3}
   menuMusic: {fileID: 1153856480672156034}
   levelMusic: {fileID: 1153856482204667213}
 --- !u!1 &1153856482204667213
@@ -229,7 +233,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3b635895e1b2e70439b67222d849d091, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.746
   m_Pitch: 1
   Loop: 1
   Mute: 0
