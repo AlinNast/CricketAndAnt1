@@ -1255,6 +1255,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: playerAudio.Violin1
+      value: 
+      objectReference: {fileID: 8300000, guid: dfce14d8621949245a46b17973842649, type: 3}
+    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: playerAudio.Violin2
+      value: 
+      objectReference: {fileID: 8300000, guid: c009d7f08d4d44b4680be3f04fca804b, type: 3}
+    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: playerAudio.Violin3
+      value: 
+      objectReference: {fileID: 8300000, guid: 9551aa0481f26c54ab07199c4050f83a, type: 3}
+    - target: {fileID: 1153856482118597548, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: playerAudio.Violin4
+      value: 
+      objectReference: {fileID: 8300000, guid: 0a39cf4866c906449ac2aafe3909a9bf, type: 3}
     - target: {fileID: 1153856482118597549, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1302,6 +1318,10 @@ PrefabInstance:
     - target: {fileID: 1153856482118597551, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
       propertyPath: m_Name
       value: AudioController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1153856482204667203, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}
+      propertyPath: m_Volume
+      value: 0.746
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a3813cb1ecea05146baed2ab1db83004, type: 3}

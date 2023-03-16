@@ -180,6 +180,9 @@ MonoBehaviour:
     playerJump: {fileID: 8300000, guid: e5916fbc63e7c4443abd412cb3bd6e2a, type: 3}
     breakCrate: {fileID: 8300000, guid: b668216871e694c2f9bb965f86b2faf9, type: 3}
     splash: {fileID: 8300000, guid: a9201c2e5628d4cda9e92854595b2171, type: 3}
+    Cri1: {fileID: 8300000, guid: aeaa5704b7f76704a897145c8418a88b, type: 3}
+    Cri2: {fileID: 8300000, guid: 9be5610bb3c25e94fa5635db85bcd579, type: 3}
+    Cri3: {fileID: 8300000, guid: 9d55e08632590fc4f983a58bacdc57dc, type: 3}
   menuMusic: {fileID: 1153856480672156034}
   levelMusic: {fileID: 1153856482204667213}
 --- !u!1 &1153856482204667213

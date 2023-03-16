@@ -188,7 +188,7 @@ public class PlayerCtrl : MonoBehaviour
 	{
 		if (isGrounded)
 		{
-			Debug.Log("works");
+			
 			AudioController.Instance.PlayerJump(transform.position);
             rigidBody.AddForce(new Vector2(rigidBody.velocity.x, jumpSpeed));
             isJumping = true;
@@ -214,11 +214,11 @@ public class PlayerCtrl : MonoBehaviour
 	{
 		if (canFire)
 		{
-			Debug.Log("note");
+			AudioController.Instance.PlayRandomViolin(transform.position);
         }
 		else
 		{
-			Debug.Log("cry");
+			AudioController.Instance.PlayRandomCri(transform.position);
 		}
 	
     }

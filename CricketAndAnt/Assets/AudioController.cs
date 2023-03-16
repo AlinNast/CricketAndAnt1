@@ -105,4 +105,55 @@ public class AudioController : MonoBehaviour
     {
         levelMusic.SetActive(true);
     }
+
+    public void PlayRandomCri(Vector3 playerPos)
+    {
+        if (soundOn)
+        {
+            int randomCri = Random.Range(0, 2);
+            switch (randomCri)
+            {
+                case 0:
+                    AudioSource.PlayClipAtPoint(playerAudio.Cri1, playerPos);
+                    break;
+                case 1:
+                    AudioSource.PlayClipAtPoint(playerAudio.Cri2, playerPos);
+                    break;
+                case 2:
+                    AudioSource.PlayClipAtPoint(playerAudio.Cri3, playerPos);
+                    break;
+                default:
+                    break;
+            }
+        }
+            
+    }
+
+    public void PlayRandomViolin(Vector3 playerPos)
+    {
+        if (soundOn)
+        {
+            int randomCri = Random.Range(0, 3);
+            Debug.Log("gets to swtich");
+            switch (randomCri)
+            {
+                
+                case 0:
+                    AudioSource.PlayClipAtPoint(playerAudio.Violin1, playerPos, 0.1f);
+                    Debug.Log("ends switch");
+                    break;
+                case 1:
+                    AudioSource.PlayClipAtPoint(playerAudio.Violin2, playerPos,1f);
+                    break;
+                case 2:
+                    AudioSource.PlayClipAtPoint(playerAudio.Violin3, playerPos,2.5f);
+                    break;
+                case 3:
+                    AudioSource.PlayClipAtPoint(playerAudio.Violin4, playerPos, 10f);
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
 }
