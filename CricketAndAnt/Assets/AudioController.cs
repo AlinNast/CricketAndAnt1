@@ -6,8 +6,8 @@ public class AudioController : MonoBehaviour
 {
     public static AudioController Instance;
 
-    public bool soundOn;
-    public bool bgMusicOn;
+    public bool soundOn = true;
+    public bool bgMusicOn = true;
     //public GameObject bgMusic;
     public PlayerAudio playerAudio;
     public AudioFx audioFx;
@@ -15,6 +15,15 @@ public class AudioController : MonoBehaviour
 
     public GameObject menuMusic;
     public GameObject levelMusic;
+
+    public GameObject Cri1;
+    public GameObject Cri2;
+    public GameObject Cri3;
+
+    public GameObject Violin1;
+    public GameObject Violin2;
+    public GameObject Violin3;
+    public GameObject Violin4;
 
 
     // Start is called before the first frame update
@@ -48,20 +57,14 @@ public class AudioController : MonoBehaviour
             levelMusic.SetActive(false);
         }
 
-        if (DataController.instance.gameData.soundOn)
-        {
-            soundOn = true;
-        }
-        else
-        {
-            soundOn = false;
-        }
+        
     }
 
     public void PlayerJump(Vector3 playerPos)
     {
         if (soundOn)
         {
+            Debug.Log("jump sound");
             AudioSource.PlayClipAtPoint(playerAudio.playerJump, playerPos);
         }
     }
@@ -108,19 +111,22 @@ public class AudioController : MonoBehaviour
 
     public void PlayRandomCri(Vector3 playerPos)
     {
+        Cri1.SetActive(false);
+        Cri2.SetActive(false);
+        Cri3.SetActive(false);
         if (soundOn)
         {
             int randomCri = Random.Range(0, 2);
             switch (randomCri)
             {
                 case 0:
-                    AudioSource.PlayClipAtPoint(playerAudio.Cri1, playerPos);
+                    Cri1.SetActive(true);
                     break;
                 case 1:
-                    AudioSource.PlayClipAtPoint(playerAudio.Cri2, playerPos);
+                    Cri2.SetActive(true);
                     break;
                 case 2:
-                    AudioSource.PlayClipAtPoint(playerAudio.Cri3, playerPos);
+                    Cri3.SetActive(true);
                     break;
                 default:
                     break;
@@ -131,29 +137,32 @@ public class AudioController : MonoBehaviour
 
     public void PlayRandomViolin(Vector3 playerPos)
     {
-        if (soundOn)
-        {
+        //if (soundOn)
+        //{
+            Violin1.SetActive(false);
+            Violin2.SetActive(false);
+            Violin3.SetActive(false);
+            Violin4.SetActive(false);
+
             int randomCri = Random.Range(0, 3);
-            Debug.Log("gets to swtich");
             switch (randomCri)
             {
                 
                 case 0:
-                    AudioSource.PlayClipAtPoint(playerAudio.Violin1, playerPos, 0.1f);
-                    Debug.Log("ends switch");
+                    Violin1.SetActive(true);
                     break;
                 case 1:
-                    AudioSource.PlayClipAtPoint(playerAudio.Violin2, playerPos,1f);
+                    Violin2.SetActive(true);
                     break;
                 case 2:
-                    AudioSource.PlayClipAtPoint(playerAudio.Violin3, playerPos,2.5f);
+                    Violin3.SetActive(true);
                     break;
                 case 3:
-                    AudioSource.PlayClipAtPoint(playerAudio.Violin4, playerPos, 10f);
+                    Violin4.SetActive(true);
                     break;
                 default:
                     break;
             }
-        }
+        //}
     }
 }
