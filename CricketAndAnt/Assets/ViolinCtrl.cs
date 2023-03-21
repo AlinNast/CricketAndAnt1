@@ -11,8 +11,7 @@ public class ViolinCtrl : MonoBehaviour
     {
         if (collider.gameObject.CompareTag("Player"))
         {
-            Debug.Log("took violin");
-
+            
             Destroy(gameObject);
         }
         

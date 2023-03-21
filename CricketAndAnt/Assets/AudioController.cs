@@ -64,7 +64,7 @@ public class AudioController : MonoBehaviour
     {
         if (soundOn)
         {
-            Debug.Log("jump sound");
+            
             AudioSource.PlayClipAtPoint(playerAudio.playerJump, playerPos);
         }
     }

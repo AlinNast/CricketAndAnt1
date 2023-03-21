@@ -25,7 +25,17 @@ public class TriggerArea : MonoBehaviour
     void SaveLevel()
     {
         DataController.instance.gameData.levelData[currentLvlIndex].hasStar = true;
-        DataController.instance.gameData.levelData[currentLvlIndex + 1].isUnlocked = true;
+        
+        if(currentLvlIndex != 6)
+        {
+            DataController.instance.gameData.levelData[currentLvlIndex + 1].isUnlocked = true;
+
+        }
+        else
+        {
+            DataController.instance.gameData.levelData[currentLvlIndex].isUnlocked = true;
+
+        }
         DataController.instance.SaveData();
     }
 }
